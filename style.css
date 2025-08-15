@@ -307,8 +307,27 @@ footer {
     background-color: #111;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px 10px;
 }
+
+.redes-sociales {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociales a {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #00bfff;
+    transform: scale(1.2);
+}
+
 
 /* =========================
    9. ACORDEÓN
@@ -399,5 +418,49 @@ footer {
     nav ul {
         flex-direction: column;
         align-items: center;
+    }
+}
+ /* 📱 Celulares (pantallas pequeñas) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nosotros-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .hero-texto h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-texto p {
+        font-size: 1em;
+    }
+
+    .contacto-section form {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* 📱💻 Tablets (pantallas medianas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .nosotros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero-texto h1 {
+        font-size: 2em;
     }
 }
