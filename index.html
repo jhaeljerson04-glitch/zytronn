@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYTRONN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">
+            <img src="logo-react.png" alt="Logo Zytronn">
+            <span class="nombre-marca">ZYTRONN</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarSeccion('inicio', event)">Inicio</a></li>
+                <li><a href="#" onclick="mostrarSeccion('nosotros', event)">Nosotros</a></li>
+                <li><a href="#" onclick="mostrarSeccion('servicios', event)">Servicios</a></li>
+                <li><a href="#" onclick="mostrarSeccion('contacto', event)">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- INICIO -->
+        <section id="inicio" class="hero pagina visible">
+            <div class="hero-texto fade-in">
+                <h1>BIENVENIDOS A ZYTRONN</h1>
+                <p>Diseñada con un estilo moderno, elegante y adaptable a cualquier dispositivo.</p>
+                <a href="#" class="boton">Ver más</a>
+            </div>  
+        </section>
+
+        <!-- NOSOTROS -->
+        <section id="nosotros" class="pagina estilo-oscuro">
+            <h2 class="titulo-nosotros">Nosotros</h2>
+            <div class="nosotros-grid">
+                <div class="nosotros-card">
+                    <h3>Misión</h3>
+                    <p>Brindar soluciones innovadoras en redes y conectividad digital, garantizando calidad, seguridad y soporte técnico especializado.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>Visión</h3>
+                    <p>Ser líderes en el sector tecnológico, impulsando la transformación digital en empresas y hogares de todo el país.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>Propósito</h3>
+                    <p>Conectar personas y negocios a través de tecnología confiable, eficiente y accesible para todos.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>Valores</h3>
+                    <p>Innovación, compromiso, transparencia, trabajo en equipo y orientación al cliente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="pagina estilo-servicios">
+            <h2 class="titulo-nosotros">Nuestros Servicios</h2>
+            <div class="nosotros-grid">
+                <div class="nosotros-card">
+                    <h3>Diseño Web Adaptativo</h3>
+                    <p>Páginas web modernas, rápidas y optimizadas para cualquier dispositivo.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>Branding e Identidad Visual</h3>
+                    <p>Diseñamos logotipos e identidades que transmiten la esencia de tu marca.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>Marketing Digital y SEO</h3>
+                    <p>Impulsa tu presencia en internet con estrategias efectivas de posicionamiento.</p>
+                </div>
+                <div class="nosotros-card">
+                    <h3>Soporte y Mantenimiento</h3>
+                    <p>Asistencia técnica continua para garantizar el correcto funcionamiento de tu web.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="pagina contacto-section">
+            <h2>Contáctanos</h2>
+            <form action="https://formsubmit.co/jhaeljerson04@gmail.com" method="POST">
+               <input type="text" name="nombre" placeholder="Tu nombre" required>
+               <input type="email" name="email" placeholder="Tu correo" required>
+               <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+               <button type="submit" class="boton">Enviar</button>
+          </form>
+
+        <!-- Configuración oculta -->
+                <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2025 ZYTRONN. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DE NAVEGACIÓN -->
+    <script>
+        function mostrarSeccion(id, event) {
+            if (event) event.preventDefault(); // Evita que recargue la página
+
+            document.querySelectorAll('.pagina').forEach(sec => {
+                sec.classList.remove('visible');
+            });
+
+            document.getElementById(id).classList.add('visible');
+        }
+    </script>
+
+    <!-- ESTILOS EN LÍNEA PARA DEMO -->
+    <style>
+        .pagina { display: none; opacity: 0; transition: opacity 0.4s ease; padding: 40px; }
+        .pagina.visible { display: block; opacity: 1; }
+
+        /* Estilos por página */
+        .estilo-oscuro { background: #111; color: white; }
+        .estilo-servicios { background: #222; color: white; }
+        .estilo-contacto { background: #333; color: lightblue; }
+
+        /* Botones */
+        .boton { background: #00bfff; padding: 10px 20px; color: white; text-decoration: none; border-radius: 5px; }
+        .peque { font-size: 0.9em; }
+
+        /* 🔹 Estilos para el formulario de contacto */
+    .contacto-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contacto-section input,
+    .contacto-section textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+
+    .contacto-section textarea {
+        min-height: 120px;
+        resize: none;
+    }
+
+    .contacto-section button {
+        padding: 10px 20px;
+        background: #00bfff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .contacto-section button:hover {
+        background: #009acd;
+    }
+</style>
+    </style>
+
+</body>
+</html>

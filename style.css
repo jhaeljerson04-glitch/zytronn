@@ -1,0 +1,403 @@
+/* =========================
+   1. ESTILOS GENERALES
+========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.pagina {
+    display: none;
+    transition: opacity 0.4s ease;
+    padding: 40px;
+}
+
+.pagina.visible {
+    display: block;
+     opacity: 1;
+}
+
+/* =========================
+   2. HEADER Y NAVEGACIÓN
+========================= */
+header {
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo y nombre */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 90px;
+    height: 75px;
+    margin-right: 20px;
+}
+
+/* Texto con efecto neón */
+.nombre-marca {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #00e5ff;
+    letter-spacing: 2px;
+    text-shadow:
+        0 0 5px #00e5ff,
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        0 0 80px #0072ff;
+    animation: brilloNeon 1s ease-in-out infinite alternate;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #09ff00;
+}
+
+/* =========================
+   3. HERO
+========================= */
+.hero {
+    background: url('pantalla.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Opcional para efecto parallax */
+    height: 60vh; /* Tu alto actual */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0, 4);  
+}
+
+
+.hero-texto {
+    background-color: rgb(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 600px; /* ancho máximo del cuadro */
+    margin: auto; /* centrar el cuadro */
+    word-wrap: break-word; /* ajustar texto */
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   4. BOTONES
+========================= */
+.boton {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+.boton:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+.boton.peque {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #00e5ff;
+    color: #111;
+}
+.boton.peque:hover {
+    background-color: #00b8cc;
+    color: white;
+    box-shadow: 0px 0px 10px #00e5ff;
+}
+
+/* =========================
+   5. SERVICIOS
+========================= */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.servicio-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   6. NOSOTROS
+========================= */
+.nosotros-section {
+    background-color: #0a0a0a;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+.titulo-nosotros {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: 'Orbitron', sans-serif;
+    color: #00e5ff;
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #0072ff;
+}
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.nosotros-card {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 229, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.nosotros-card h3 {
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+.nosotros-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 20px rgba(0, 229, 255, 0.6);
+}
+.contacto-nosotros {
+    margin-top: 40px;
+    font-size: 18px;
+}
+.contacto-nosotros p {
+    color: #ccc;
+}
+
+/* =========================
+   CONTACTO ELEGANTE
+========================= */
+.contacto-section {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+}
+
+.contacto-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: 'Orbitron', sans-serif;
+    color: #00e5ff;
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #0072ff;
+}
+
+/* Estilo del formulario */
+form {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 0px 20px rgba(0, 229, 255, 0.3);
+    border: 1px solid rgba(0, 229, 255, 0.5);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #00e5ff;
+    background: #111;
+    color: white;
+    font-size: 16px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px #00e5ff;
+}
+
+/* Botón elegante */
+form button {
+    background: #00e5ff;
+    color: #111;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #00b8cc;
+    color: white;
+    box-shadow: 0px 0px 15px #00e5ff;
+}
+/* =========================
+   7. FORMULARIO DE CONTACTO
+========================= */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* =========================
+   8. FOOTER
+========================= */
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* =========================
+   9. ACORDEÓN
+========================= */
+.acordeon {
+    max-width: 700px;
+    margin: auto;
+}
+.acordeon-item {
+    border-bottom: 1px solid #ccc;
+}
+.acordeon-titulo {
+    background: #222;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.acordeon-titulo:hover {
+    background: #444;
+}
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background: #111;
+    color: #ddd;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.acordeon-contenido p, 
+.acordeon-contenido ul {
+    margin: 15px 0;
+}
+.acordeon-item.activo .acordeon-contenido {
+    max-height: 300px;
+    padding: 15px;
+}
+
+/* =========================
+   10. ANIMACIONES
+========================= */
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes brilloNeon {
+    from {
+        text-shadow:
+            0 0 5px #0125c78f,
+            0 0 10px #0817a1,
+            0 0 20px #0817a1,
+            0 0 40px #0927d1,
+            0 0 80px #0927d1;
+    }
+    to {
+        text-shadow:
+            0 0 10px #00ffff,
+            0 0 20px #00ffff,
+            0 0 40px #00ffff,
+            0 0 80px #00ccff,
+            0 0 160px #00ccff;
+    }
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   11. RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
